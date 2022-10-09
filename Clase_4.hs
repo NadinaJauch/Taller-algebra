@@ -14,7 +14,8 @@ sumatoria1 n= 2^n + sumatoria1 (n-1) --le sumo 2 a la n a la sumatoria que es 2 
 
 sumatoria2:: Int -> Float -> Float
 sumatoria2 0 q = 0
-sumatoria2 n q = q^n + sumatoria2(n-1) q --q a la n mas la sumatoria hasta n-1
+sumatoria2 n q = q^n + sumatoria2(n-1) q 
+--q a la n mas la sumatoria hasta n-1
 
 sumatoria3:: Int -> Float -> Float --igual que la anterior pero hasta 2n
 sumatoria3 0 q = 0 
@@ -68,3 +69,7 @@ sumaRacionales n m = (fromIntegral (sumatoria n)) / (fromIntegral m) + (sumaRaci
 g1 :: Int -> Int -> Int
 g1 0 n = 1
 g1 i n = i^n + g1 (i-1) n
+
+g2:: Int -> Int -> Int
+g2 0 m = 0
+g2 n m = (g2 (n-1) m) + round (sumatoria2 m (fromIntegral n))
